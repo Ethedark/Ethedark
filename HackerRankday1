@@ -1,0 +1,13 @@
+import java.io.*;
+import java.util.*; //need for using scan feature
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan=new Scanner(System.in); //created scan object
+        String inputString=scan.nextLine(); //scan the value
+        scan.close();
+        System.out.println("Hello, World."); //write the console "Hello, World."
+        System.out.println(inputString); //write the console whatever we give string as input
+    }
+}
