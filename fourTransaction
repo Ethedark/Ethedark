@@ -1,0 +1,36 @@
+import java.util.Arrays;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+        String a;
+        //Create a scan value
+        Scanner scan=new Scanner(System.in);
+        System.out.println("İşlemi Giriniz: ");
+        //Scan the value
+        a=scan.nextLine();
+
+        try {
+            //Parse for brackets
+            String parsed = a.substring(a.indexOf("(")+1,a.indexOf(")"));
+            System.out.println(parsed);
+
+            //Parse for addition in parantheses value
+            String parsed1=parsed.substring(0,parsed.indexOf("+"));
+            System.out.println(parsed1);
+            String parsed2=parsed.substring(parsed.indexOf("+")+1,parsed.length());
+            System.out.println(parsed2);
+
+            //Result of addition
+            int parsed12=Integer.parseInt(parsed1)+Integer.parseInt(parsed2);
+            System.out.println(parsed12);
+
+            //Parse out of brackets
+            String parsedx = a.substring(a.indexOf(")")+1,a.length());
+            System.out.println(parsedx);
+            if(parsedx.contains("+")){
+                String parsed3=parsedx.substring(1,parsedx.length());
+                int parsedx1 = parsed12+Integer.parseInt(parsed3);
+                System.out.println(parsedx1);
+            }
